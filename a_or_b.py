@@ -4,11 +4,14 @@ a_or_b = input("a or b:")
 def a(a):
     readytext = a.split()
     for i in readytext:
-        if i.endswith(".") or i.endswith(","):
-            i = readytext[i[:len(i)-1]]
+        if len(i) < 3:
+            readytext.pop(readytext.index(i))
+        i.strip()
+        if not i[len(i)-1].isalnum():
+            readytext[readytext.index(i)] = i[:len(i)-1]
+        print(i)
 
-
-    readytext.sort()
+    readytext.sort(key=str.lower)
     print(readytext)
 
 

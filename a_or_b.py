@@ -9,10 +9,9 @@ def a(a):
         i.strip()
         if not i[len(i)-1].isalnum():
             readytext[readytext.index(i)] = i[:len(i)-1]
-        print(i)
-
     readytext.sort(key=str.lower)
-    print(readytext)
+    for i in readytext:
+        print(i.capitalize())
 
 
 def b(a):
